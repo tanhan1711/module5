@@ -1,0 +1,8 @@
+{
+  "name": "typescript-variable",
+  "version": "1.0.0",
+  "dependencies": {
+    "querystring": "^0.2.1",
+    "typescript": "^4.1.5"
+  }
+}
