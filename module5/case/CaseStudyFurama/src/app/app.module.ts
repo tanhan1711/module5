@@ -7,6 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServiceComponent } from './service/service.component';
+import { EditserviceComponent } from './editservice/editservice.component';
+import { CreateserviceComponent } from './createservice/createservice.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { ServiceComponent } from './service/service.component';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    ServiceComponent
+    ServiceComponent,
+    EditserviceComponent,
+    CreateserviceComponent,
+    EditCustomerComponent,
+    CreateCustomerComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
