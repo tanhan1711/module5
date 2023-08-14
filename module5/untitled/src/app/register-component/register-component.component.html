@@ -9,42 +9,31 @@
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" id="email" placeholder="abc@email.com" formControlName="email">
-
-    <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email')?.touched">
-      <p class="text-danger" *ngIf="registrationForm.get('email').errors?.required">Không được để trống !</p>
-    </div>
-
+    <p class="text-danger" *ngIf="registrationForm.get('email').errors?.required">Không được để trống !</p>
   </div>
-
-  <div class="form-group">
-    <label for="password">Mật khẩu</label>
-    <input type="password" class="form-control" id="password" placeholder="********" formControlName="password"
-           required minlength="6">
-
-    <div *ngIf="registrationForm.get('password').invalid && registrationForm.get('password')?.dirty">
-      <p class="text-danger" *ngIf="registrationForm.get('password').errors?.required">Không được để trống!</p>
-      <p class="text-danger" *ngIf="registrationForm.get('password').errors?.minlength">Tối thiểu 6 ký tự!</p>
+  <!--  check mat khau-->
+  <div formGroupName="confirm">
+    <div class="form-group">
+      <label for="password">Mật khẩu</label>
+      <input type="password" class="form-control" id="password" placeholder="********" formControlName="password"
+             required minlength="6">
+      <div>
+        <p class="text-danger" *ngIf="registrationForm.controls.confirm.get('password').errors?.required">Không được để trống!</p>
+        <p class="text-danger" *ngIf="registrationForm.controls.confirm.get('password').errors?.minlength">Tối thiểu 6 ký tự!</p>
+      </div>
     </div>
-
-
+      <!--    confirm password-->
+      <div class="form-group" formControlName="confirmPassword">
+        <label for="confirmPassword">Nhập lại mật khẩu</label>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="********" formControlName="confirmPassword" required minlength="6">
+        <div>
+        <p class="text-danger" *ngIf="registrationForm.controls.confirm.get('confirmPassword').errors?.required">Không được để </p>
+        <p class="text-danger" *ngIf="registrationForm.controls.confirm.get('confirmPassword').errors?.minlength">Tối thiểu 6 ký tự!</p>
+        <p class="text-danger" *ngIf="registrationForm.controls.confirm.get('confirmPassword').errors?.passwordMismatch">aaaaa!</p>
+          </div>
+      </div>
   </div>
-
-  <div class="form-group">
-    <label for="confirmPassword">Nhập lại mật khẩu</label>
-    <input type="password" class="form-control" id="confirmPassword" placeholder="********"
-           formControlName="confirmPassword" required minlength="6">
-
-    <div *ngIf="registrationForm.get('confirmPassword').invalid && registrationForm.get('confirmPassword')?.touched">
-      <p class="text-danger" *ngIf="registrationForm.get('confirmPassword').errors?.required">Không được để
-        trống</p>
-      <p class="text-danger" *ngIf="registrationForm.get('confirmPassword').errors?.minlength">Tối thiểu 6 ký
-        tự</p>
-      <p class="text-danger" *ngIf="registrationForm.get('confirmPassword') != registrationForm.get('password')">Khác so với mật
-        khẩu</p>
-    </div>
-
-  </div>
-
+  <!--  check mat khau-->
   <div class="form-group">
     <label for="country">Country</label>
     <select class="form-control" id="country" name="country" formControlName="country" required>
@@ -56,20 +45,14 @@
       <option value="Italy">Mỹ</option>
     </select>
 
-    <div *ngIf="registrationForm.get('country').invalid && registrationForm.get('country')?.touched">
-      <p class="text-danger" *ngIf="registrationForm.get('country').invalid">Không được để trống !</p>
-    </div>
-
+          <p class="text-danger" *ngIf="registrationForm.get('country').invalid">Không được để trống !</p>
   </div>
 
   <div class="form-group">
     <label for="age">Tuổi</label>
     <input type="number" class="form-control" id="age" formControlName="age" required>
-
-    <div *ngIf="registrationForm.get('age').invalid && registrationForm.get('age')?.touched">
       <p class="text-danger" *ngIf="registrationForm.get('age').errors?.required">Không được để trống !</p>
       <p class="text-danger" *ngIf="registrationForm.get('age').errors?.invalidAge">Diem khong hop le</p>
-    </div>
 
   </div>
 
@@ -90,9 +73,6 @@
       </div>
     </div>
 
-    <div *ngIf="registrationForm.get('gender').invalid ">
-      <p class="text-danger" *ngIf="registrationForm.get('gender').invalid">Không được để trống</p>
-    </div>
 
   </div>
 
@@ -101,10 +81,8 @@
     <input type="text" class="form-control" id="phone" placeholder="+84123456789" formControlName="phone" required
            pattern="^\+84\d{9,10}$">
 
-    <div *ngIf="registrationForm.get('phone').invalid && registrationForm.get('phone')?.touched">
-      <p class="text-danger" *ngIf="registrationForm.get('phone').errors?.required">Không được để trống</p>
-      <p class="text-danger" *ngIf="registrationForm.get('phone').errors?.pattern">Không đúng định dạng</p>
-    </div>
+          <p class="text-danger" *ngIf="registrationForm.get('phone').errors?.required">Không được để trống</p>
+          <p class="text-danger" *ngIf="registrationForm.get('phone').errors?.pattern">Không đúng định dạng</p>
 
   </div>
   <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">Đăng ký</button>
