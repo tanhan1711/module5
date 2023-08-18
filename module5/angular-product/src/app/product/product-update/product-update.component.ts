@@ -18,7 +18,7 @@ export class ProductUpdateComponent implements OnInit {
       const product = this.getProduct(this.id);
       this.productForm = new FormGroup({
         id: new FormControl(product.id),
-        nameProduct: new FormControl(product.nameProduct),
+        name: new FormControl(product.name),
         price: new FormControl(product.price),
         description: new FormControl(product.description)
       });
@@ -36,6 +36,7 @@ export class ProductUpdateComponent implements OnInit {
     const product = this.productForm.value;
     this.productservice.updateProductById(id, product);
     alert('Cập nhật thành công');
-    this.router.navigateByUrl('/product/list');
+    console.log(product)
+
   }
 }

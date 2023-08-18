@@ -8,7 +8,8 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import {ReactiveFormsModule} from "@angular/forms";
 import { ProductUpdateComponent } from './product/product-update/product-update.component';
 import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
-
+import {SharedModule} from "./shared/shared.module";
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ProductDeleteComponent } from './product/product-delete/product-delete.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
