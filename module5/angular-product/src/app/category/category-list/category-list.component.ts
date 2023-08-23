@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Category} from "../../model/category";
 import {CategoryService} from "../../service/category.service";
 
@@ -18,7 +18,9 @@ export class CategoryListComponent implements OnInit {
   }
 
   getAll() {
-    this.categories = this.categoryService.getAll();
+    this.categoryService.getAll().subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
 }

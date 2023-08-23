@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "ip",
+      "price": 123,
+      "description": "new",
+      "category": {
+        "id": "2",
+        "name": "SamSung"
+      }
+    },
+    {
+      "id": 3213213,
+      "name": "sffdsf",
+      "price": 3213213,
+      "description": "fdsfsdfsd",
+      "category": {
+        "id": "1",
+        "name": "Phone"
+      }
+    },
+    {
+      "id": 4,
+      "name": "aa",
+      "price": 123,
+      "description": "new",
+      "category": {
+        "id": "2",
+        "name": "SamSung"
+      }
+    },
+    {
+      "id": 3,
+      "name": "ip",
+      "price": 123,
+      "description": "aa",
+      "category": {
+        "id": "1",
+        "name": "Phone"
+      }
+    },
+    {
+      "id": 3213214,
+      "name": "iphone",
+      "price": 4,
+      "description": "new",
+      "category": {
+        "id": "1",
+        "name": "Phone"
+      }
+    },
+    {
+      "id": 3213215,
+      "name": "askdjh",
+      "price": 1231,
+      "description": "123jaslkd",
+      "category": {
+        "id": "2",
+        "name": "SamSung"
+      }
+    },
+    {
+      "id": 3213216,
+      "name": "ip1",
+      "price": 14,
+      "description": "aaabbb",
+      "category": {
+        "id": "2",
+        "name": "SamSung"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Phone"
+    },
+    {
+      "id": "2",
+      "name": "SamSung"
+    }
+  ]
+}

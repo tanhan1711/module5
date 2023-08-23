@@ -25,6 +25,10 @@ const routes: Routes = [{
   {
     path: 'delete/:id',
     component: ProductDeleteComponent
+  },
+  {
+    path: 'search/:name',
+    component: ProductListComponent
   },];
 
 @NgModule({

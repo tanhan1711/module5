@@ -1,25 +1,43 @@
 <h1>Tạo sản phẩm mới</h1>
 <form [formGroup]="productForm" (ngSubmit)="submit()">
-  <table>
+  <table style="margin: 0 auto" class="table table-striped table-hover ">
     <tr>
       <td>Mã sản phẩm:</td>
-      <td><input type="number" formControlName="id"></td>
+      <td><input type="hidden" formControlName="id"></td>
     </tr>
+    <div class="form-group">
     <tr>
       <td>Tên sản phẩm:</td>
-      <td><input type="text" formControlName="name"></td>
+      <td><input type="text" formControlName="name" required></td>
+      <p class="text-danger" *ngIf="productForm.get('name').errors?.required">Không được để trống</p>
     </tr>
+    </div>
+    <div class="form-group">
     <tr>
       <td>Giá sản phẩm</td>
       <td><input type="number" formControlName="price"></td>
+      <p class="text-danger" *ngIf="productForm.get('price').errors?.required">Không được để trống</p>
     </tr>
+    </div>
+    <div class="form-group">
     <tr>
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
+      <p class="text-danger" *ngIf="productForm.get('description').errors?.required">Không được để trống</p>
+
     </tr>
+    </div>
+    <div class="form-group">
+    <tr>
+      <td>Danh muc</td>
+      <select formControlName="category">
+        <option selected [ngValue]="null" disabled>choose one</option>
+        <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+      </select>
+    </tr>
+    </div>
     <tr>
       <td></td>
-      <td><button>Tạo mới</button></td>
-    </tr>
+      <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary">Them moi</button>    </tr>
   </table>
 </form>

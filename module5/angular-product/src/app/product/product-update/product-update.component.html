@@ -1,7 +1,7 @@
 <h1>Cập nhật thông tin sản phẩm</h1>
 <!--<a routerLink="/product/list">Quay Lại Trang Danh Sách</a>-->
 <form [formGroup]="productForm" (ngSubmit)="updateProduct(id)">
-  <table>
+  <table style="margin: 0 auto" class="table table-striped table-hover ">
     <tr>
       <td>Tên sản phẩm:</td>
       <td><input type="text" formControlName="name"></td>
@@ -13,6 +13,13 @@
     <tr>
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td>Danh mục sản phẩm</td>
+      <td><select formControlName="category">
+        <option disabled>Chọn danh mục sản phẩm</option>
+        <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+      </select></td>
     </tr>
     <tr>
       <td></td>
